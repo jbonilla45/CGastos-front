@@ -1,0 +1,91 @@
+<p>create works!</p>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h3>Crear Gasto</h3> </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- <div class="row"> -->
+    <form [formGroup]="gastoForm" (ngSubmit)="createGasto()">
+      <!-- <div class="row"> -->
+      <div class="input-field">
+        <input
+          formControlName="descripcion"
+          id="descripcion"
+          type="text"
+          class="validate"
+        />
+        <label for="descripcion">Descripcion</label>
+      </div>
+      <div class="input-field">
+        <select formControlName="tipo">
+          <option disabled selected>Choose your option</option>
+          <option>Producto</option>
+          <option>Servicio</option>
+        </select>
+        <label>Tipo de gasto</label>
+      </div>
+      <div class="input-field">
+        <select formControlName="rubro">
+          <option disabled selected>Choose your option</option>
+          <option>Alimentación</option>
+          <option>Restaurante</option>
+          <option>Educación</option>
+          <option>Vestuario</option>
+          <option>Servicios públicos</option>
+          <option>Transporte</option>
+          <option>Vivienda</option>
+          <option>Salud</option>
+          <option>Diversión y entretenimiento</option>
+          <option>Operaciones</option>
+          <option>Créditos</option>
+        </select>
+        <label>Rubro</label>
+      </div>
+      <div class="input-field">
+        <input
+          formControlName="establecimiento"
+          id="establecimiento"
+          type="text"
+          class="validate"
+        />
+        <label for="establecimiento">Establecimiento</label>
+      </div>
+      <div class="input-field">
+        <input
+          formControlName="valor"
+          id="valor"
+          type="number"
+          class="validate"
+        />
+        <label for="valor">Valor</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input
+            formControlName="impuesto"
+            id="impuesto"
+            type="number"
+            class="validate"
+          />
+          <label for="impuesto">Impuesto</label>
+        </div>
+        <div class="input-field col s6">
+          <input
+            formControlName="descuento"
+            id="descuento"
+            type="number"
+            class="validate"
+          />
+          <label for="descuento">Descuento</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" [disabled]="gastoForm.invalid">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <!-- </div> -->
+    </form>
+    <!-- </div> -->
+  </mat-card-content>
+</mat-card>
