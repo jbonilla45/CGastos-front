@@ -4,16 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'gastos',
-    loadChildren: () => import('./gastos/gastos.module').then(m => m.GastosModule)
+    loadChildren: () =>
+      import('./gastos/gastos.module').then((m) => m.GastosModule),
   },
   {
-    path:'**',
-    redirectTo:'gastos'
-  }
+    path: '**',
+    redirectTo: 'gastos',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

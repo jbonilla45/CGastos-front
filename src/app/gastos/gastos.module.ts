@@ -17,11 +17,15 @@ import {
 } from '@angular/material/form-field';
 
 import { ToastrModule } from 'ngx-toastr';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     CreateComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +36,10 @@ import { ToastrModule } from 'ngx-toastr';
     MatSelectModule,
     MatFormFieldModule,
     MatSlideToggleModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
     ToastrModule.forRoot(),
   ],
   providers: [

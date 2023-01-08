@@ -1,3 +1,4 @@
+import { ListComponent } from './components/list/list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './components/create/create.component';
@@ -8,8 +9,12 @@ const routes: Routes = [
     component: CreateComponent,
   },
   {
+    path: 'list',
+    component: ListComponent,
+  },
+  {
     path: '**',
-    redirectTo: 'create',
+    redirectTo: 'list',
   },
 ];
 
