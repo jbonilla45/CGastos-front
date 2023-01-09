@@ -3,14 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'gastos',
-    loadChildren: () =>
-      import('./gastos/gastos.module').then((m) => m.GastosModule),
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '**',
-    redirectTo: 'gastos',
+    path: 'gastos',
+    loadChildren: () =>
+      import('./gastos/gastos.module').then((mod) => mod.GastosModule),
   },
+  // {
+  //   path: '**',
+  //   redirectTo: '/home',
+  // },
 ];
 
 @NgModule({

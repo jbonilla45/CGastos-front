@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Gasto } from '../../models/gasto';
 import { GastoService } from '../../services/gasto.service';
@@ -9,25 +10,29 @@ import { GastoService } from '../../services/gasto.service';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
   gastoForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private _gastoService: GastoService
+    private _gastoService: GastoService,
+    private router: Router
   ) {
     this.gastoForm = this.fb.group({
       descripcion: ['', Validators.required],
       tipo: ['', Validators.required],
       rubro: ['', Validators.required],
       establecimiento: ['', Validators.required],
-      valor: [0, Validators.required],
+      valor: [, Validators.required],
       impuesto: [0],
       descuento: [0],
     });
   }
-
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+  }
   createGasto() {
     const GASTO: Gasto = {
       descripcion: this.gastoForm.get('descripcion')?.value,
@@ -53,5 +58,6 @@ export class CreateComponent {
         this.gastoForm.reset();
       },
     });
+    this.router.navigate(['list']);
   }
 }

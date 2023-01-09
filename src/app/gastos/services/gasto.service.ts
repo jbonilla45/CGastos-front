@@ -7,8 +7,8 @@ import { Gasto } from '../models/gasto';
   providedIn: 'root',
 })
 export class GastoService {
-  url = 'https://cgastos-backend-production.up.railway.app/api/gastos';
-  //url = 'http://localhost:4000/api/gastos'
+  //url = 'https://cgastos-backend-production.up.railway.app/api/gastos';
+  url = 'http://localhost:4000/api/gastos'
 
   constructor(private http: HttpClient) {}
 

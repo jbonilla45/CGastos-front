@@ -20,13 +20,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    CreateComponent,
-    ListComponent,
-  ],
+  declarations: [CreateComponent, ListComponent],
   imports: [
     CommonModule,
     GastosRoutingModule,
@@ -41,12 +39,15 @@ import {MatInputModule} from '@angular/material/input';
     MatSortModule,
     MatInputModule,
     ToastrModule.forRoot(),
+    RouterModule,
   ],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' },
+      useValue: { appearance: 'fill' },
     },
   ],
+  //export list provisional mientras se configura home
+  exports: [],
 })
-export class GastosModule { }
+export class GastosModule {}

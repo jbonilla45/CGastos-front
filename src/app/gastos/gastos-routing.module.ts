@@ -1,6 +1,6 @@
-import { ListComponent } from './components/list/list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 
 const routes: Routes = [
@@ -11,10 +11,6 @@ const routes: Routes = [
   {
     path: 'list',
     component: ListComponent,
-  },
-  {
-    path: '**',
-    redirectTo: 'list',
   },
 ];
 
