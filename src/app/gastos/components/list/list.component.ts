@@ -56,8 +56,8 @@ export class ListComponent implements OnInit {
     this._gastoService.listGastos().subscribe({
       next: (data) => {
         this.dataSource.data = data;
-        console.log(data);
-        console.log(this.dataSource.data);
+        //console.log(data);
+        //console.log(this.dataSource.data);
       },
       error: (error) => {
         console.log(error);

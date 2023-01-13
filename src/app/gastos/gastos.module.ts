@@ -8,6 +8,9 @@ import { ListComponent } from './components/list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastrModule } from 'ngx-toastr';
+import { RouterModule } from '@angular/router';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,13 +18,11 @@ import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
 } from '@angular/material/form-field';
-
-import { ToastrModule } from 'ngx-toastr';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import { RouterModule } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [CreateComponent, ListComponent],
@@ -38,6 +39,7 @@ import { RouterModule } from '@angular/router';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
+    MatButtonModule,
     ToastrModule.forRoot(),
     RouterModule,
   ],
@@ -48,6 +50,6 @@ import { RouterModule } from '@angular/router';
     },
   ],
   //export list provisional mientras se configura home
-  exports: [],
+  exports: [ListComponent],
 })
 export class GastosModule {}

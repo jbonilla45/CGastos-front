@@ -1,111 +1,116 @@
-<mat-card class="mt-2">
-  <mat-card-header class="pt-1">
-    <mat-card-title><h4 class="mt-2">Crear Gasto</h4> </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form [formGroup]="gastoForm" (ngSubmit)="createGasto()">
-      <div class="row">
-        <!-- Descripcion -->
-        <mat-form-field class="col s12">
-          <mat-label>Descripcion</mat-label>
-          <input
-            matInput
-            formControlName="descripcion"
-            id="descripcion"
-            required
-            placeholder="Ex. Factura 00, arroz"
-          />
-        </mat-form-field>
+<div class="row jcse mx-0 px-0">
+  <div class="col-12 col-md-9 ">
+    <mat-card class="mt-2 ">
+      <mat-card-header class="pt-1">
+        <mat-card-title><h3 class="mt-2">Crear Gasto</h3> </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="gastoForm" (ngSubmit)="createGasto()">
+          <div class="row">
+            <!-- Descripcion -->
+            <mat-form-field class="col-sm-12">
+              <mat-label>Descripcion</mat-label>
+              <input
+                matInput
+                formControlName="descripcion"
+                id="descripcion"
+                required
+                placeholder="Ex. Factura 00, arroz"
+              />
+            </mat-form-field>
 
-        <!-- tipo -->
-        <mat-form-field class="col s12 m6">
-          <mat-label>Tipo de gasto</mat-label>
-          <mat-select required formControlName="tipo">
-            <mat-option disabled selected>Choose your option</mat-option>
-            <mat-option value="Producto">Producto</mat-option>
-            <mat-option value="Servicio">Servicio</mat-option>
-          </mat-select>
-        </mat-form-field>
+            <!-- tipo -->
+            <mat-form-field class="col-sm-12 md-6">
+              <mat-label>Tipo de gasto</mat-label>
+              <mat-select required formControlName="tipo">
+                <mat-option disabled selected>Choose your option</mat-option>
+                <mat-option value="Producto">Producto</mat-option>
+                <mat-option value="Servicio">Servicio</mat-option>
+              </mat-select>
+            </mat-form-field>
 
-        <!-- rubro -->
-        <mat-form-field class="col s12 m6">
-          <mat-label>Rubro</mat-label>
-          <mat-select required formControlName="rubro">
-            <mat-option disabled selected>Choose your option</mat-option>
-            <mat-option value="Alimentación">Alimentación</mat-option>
-            <mat-option value="Restaurante">Restaurante</mat-option>
-            <mat-option value="Educación">Educación</mat-option>
-            <mat-option value="Vestuario">Vestuario</mat-option>
-            <mat-option value="Servicios públicos"
-              >Servicios públicos</mat-option
+            <!-- rubro -->
+            <mat-form-field class="col-sm-12 md-6">
+              <mat-label>Rubro</mat-label>
+              <mat-select required formControlName="rubro">
+                <mat-option disabled selected>Choose your option</mat-option>
+                <mat-option value="Alimentación">Alimentación</mat-option>
+                <mat-option value="Restaurante">Restaurante</mat-option>
+                <mat-option value="Educación">Educación</mat-option>
+                <mat-option value="Vestuario">Vestuario</mat-option>
+                <mat-option value="Servicios públicos"
+                  >Servicios públicos</mat-option
+                >
+                <mat-option value="Transporte">Transporte</mat-option>
+                <mat-option value="Vivienda">Vivienda</mat-option>
+                <mat-option value="Salud">Salud</mat-option>
+                <mat-option value="Diversión y entretenimiento"
+                  >Diversión y entretenimiento</mat-option
+                >
+                <mat-option value="Operaciones">Operaciones</mat-option>
+                <mat-option value="Créditos">Créditos</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- establecimiento -->
+            <mat-form-field class="col-sm-12">
+              <mat-label>Establecimiento</mat-label>
+              <input
+                matInput
+                formControlName="establecimiento"
+                id="establecimiento"
+                required
+                placeholder="Tienda de la esquina"
+              />
+            </mat-form-field>
+
+            <!-- valor -->
+            <mat-form-field class="col-sm-12">
+              <mat-label>Valor</mat-label>
+              <input
+                matInput
+                formControlName="valor"
+                id="valor"
+                required
+                placeholder="ingresa solo numeros"
+              />
+            </mat-form-field>
+
+            <!-- impuesto -->
+            <mat-form-field class="col-sm-6">
+              <mat-label>Impuesto</mat-label>
+              <input
+                matInput
+                formControlName="impuesto"
+                id="impuesto"
+                required
+                placeholder="ingresa solo numeros"
+              />
+            </mat-form-field>
+
+            <!-- descuento -->
+            <mat-form-field class="col-sm-6">
+              <mat-label>Descuento</mat-label>
+              <input
+                matInput
+                formControlName="descuento"
+                id="descuento"
+                required
+                placeholder="ingresa solo numeros"
+              />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="gastoForm.invalid"
             >
-            <mat-option value="Transporte">Transporte</mat-option>
-            <mat-option value="Vivienda">Vivienda</mat-option>
-            <mat-option value="Salud">Salud</mat-option>
-            <mat-option value="Diversión y entretenimiento"
-              >Diversión y entretenimiento</mat-option
-            >
-            <mat-option value="Operaciones">Operaciones</mat-option>
-            <mat-option value="Créditos">Créditos</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <!-- establecimiento -->
-        <mat-form-field class="col s12">
-          <mat-label>Establecimiento</mat-label>
-          <input
-            matInput
-            formControlName="establecimiento"
-            id="establecimiento"
-            required
-            placeholder="Tienda de la esquina"
-          />
-        </mat-form-field>
-
-        <!-- valor -->
-        <mat-form-field class="col s12">
-          <mat-label>Valor</mat-label>
-          <input
-            matInput
-            formControlName="valor"
-            id="valor"
-            required
-            placeholder="ingresa solo numeros"
-          />
-        </mat-form-field>
-
-        <!-- impuesto -->
-        <mat-form-field class="col s6 m12">
-          <mat-label>Impuesto</mat-label>
-          <input
-            matInput
-            formControlName="impuesto"
-            id="impuesto"
-            required
-            placeholder="ingresa solo numeros"
-          />
-        </mat-form-field>
-
-        <!-- descuento -->
-        <mat-form-field class="col s6 m12">
-          <mat-label>Descuento</mat-label>
-          <input
-            matInput
-            formControlName="descuento"
-            id="descuento"
-            required
-            placeholder="ingresa solo numeros"
-          />
-        </mat-form-field>
-        <button
-          class="btn waves-effect waves-light"
-          type="submit"
-          [disabled]="gastoForm.invalid"
-        >
-          Submit
-          <i class="material-icons right">send</i>
-        </button>
-      </div>
-    </form>
-  </mat-card-content>
-</mat-card>
+            &nbsp; Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

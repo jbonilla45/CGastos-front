@@ -4,14 +4,14 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 
 const routes: Routes = [
-  {
-    path: 'create',
-    component: CreateComponent,
-  },
-  {
-    path: 'list',
-    component: ListComponent,
-  },
+  // {
+  //   path: 'create',
+  //   component: CreateComponent,
+  // },
+  // {
+  //   path: '',
+  //   component: ListComponent,
+  // },
 ];
 
 @NgModule({
