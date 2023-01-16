@@ -1,15 +1,15 @@
-import { GastoService } from './../../services/gasto.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { GastoService } from '../../services/gasto.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
   //decoradores funciones de tabla
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -27,27 +27,28 @@ export class ListComponent implements OnInit {
   ];
 
   //array de datos inicializado
-  dataSource: any = new MatTableDataSource<any>([]);
+  @Input() listGastos: any = new MatTableDataSource<any>([]);
 
   constructor(private _gastoService: GastoService) {}
 
   ngOnInit(): void {
-    console.log(this.dataSource);
+    //console.log('desde list')
+    //console.log(this.listGastos.data);
     this._listGastos();
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.listGastos.paginator = this.paginator;
+    this.listGastos.sort = this.sort;
   }
 
   //funciones angular
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.listGastos.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+    if (this.listGastos.paginator) {
+      this.listGastos.paginator.firstPage();
     }
   }
 
@@ -55,9 +56,9 @@ export class ListComponent implements OnInit {
   _listGastos() {
     this._gastoService.listGastos().subscribe({
       next: (data) => {
-        this.dataSource.data = data;
+        this.listGastos.data = data;
         //console.log(data);
-        //console.log(this.dataSource.data);
+        console.log(this.listGastos.data);
       },
       error: (error) => {
         console.log(error);

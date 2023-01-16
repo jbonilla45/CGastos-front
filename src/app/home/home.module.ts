@@ -1,3 +1,5 @@
+import { DashboardComponent } from './../dashboard/components/dashboard/dashboard.component';
+import { DashboardModule } from './../dashboard/dashboard.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,13 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { GastoService } from '../gastos/services/gasto.service';
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, SidebarComponent],
   imports: [
     CommonModule,
     RouterModule,
-    HomeRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
@@ -30,5 +32,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSidenavModule,
   ],
   exports: [NavbarComponent, SidebarComponent],
+  providers:[GastoService]
 })
 export class HomeModule {}

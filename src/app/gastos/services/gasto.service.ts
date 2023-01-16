@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { Gasto } from '../models/gasto';
 
@@ -7,8 +8,8 @@ import { Gasto } from '../models/gasto';
   providedIn: 'root',
 })
 export class GastoService {
-  //url = 'https://cgastos-backend-production.up.railway.app/api/gastos';
-  url = 'http://localhost:4000/api/gastos'
+  url = 'https://cgastos-backend-production.up.railway.app/api/gastos';
+  //url = 'http://localhost:4000/api/gastos'
 
   constructor(private http: HttpClient) {}
 
@@ -27,4 +28,6 @@ export class GastoService {
   }
 
   deleteGasto() {}
+  chartOptions: any;
+  count: any[] = [];
 }

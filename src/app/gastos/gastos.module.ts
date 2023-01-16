@@ -22,13 +22,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [CreateComponent, ListComponent],
   imports: [
     CommonModule,
-    GastosRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,

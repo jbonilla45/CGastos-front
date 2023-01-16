@@ -1,3 +1,6 @@
+import { AreaChartComponent } from './../widgets/area-chart/area-chart.component';
+import { GastoService } from './../gastos/services/gasto.service';
+import { WidgetsModule } from './../widgets/widgets.module';
 import { GastosModule } from './../gastos/gastos.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +18,9 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     MatDividerModule,
     MatCardModule,
-    GastosModule
-  ]
+    GastosModule,
+    WidgetsModule
+  ],
+  providers:[GastoService]
 })
 export class DashboardModule { }

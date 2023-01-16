@@ -1,3 +1,4 @@
+import { WidgetsModule } from './widgets/widgets.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { GastosModule } from './gastos/gastos.module';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     GastosModule,
     HomeModule,
-    DashboardModule
+    DashboardModule,
+    WidgetsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
