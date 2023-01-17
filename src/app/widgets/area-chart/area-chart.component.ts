@@ -20,8 +20,8 @@ export class AreaChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.get();
-    this.obj = this._obj();
-    this.chartOptions = {
+    //this.obj = this._obj();
+    /*     this.chartOptions = {
       accessibility: {
         enabled: false,
       },
@@ -55,14 +55,14 @@ export class AreaChartComponent implements OnInit {
           pointIntervalUnit: 'month',
         },
       },
-      // series: this.obj,
-      series: [
-        {
-          data: this.count,
-        },
-      ],
+      series: this.obj,
+      // series: [
+      //   {
+      //     data: this.count,
+      //   },
+      // ],
     };
-    HC_exporting(Highcharts);
+ */ HC_exporting(Highcharts);
 
     setTimeout(() => {
       window.dispatchEvent(new Event('resize'));
@@ -70,7 +70,8 @@ export class AreaChartComponent implements OnInit {
   }
   get() {
     this._service.listGastos().subscribe((data: any) => {
-      this.draw(data);
+      //this.draw(data);
+      this.find(data);
     });
   }
 
@@ -89,32 +90,61 @@ export class AreaChartComponent implements OnInit {
     let c = 0;
 
     let i;
+
+    let _a = [];
+    //_a.push(a);
+    let _r = [];
+    //_r.push(r);
+    let _o = [];
+
     for (let index = 0; index < data.length; index++) {
       const element = data[index];
       if (element.rubro == 'Alimentación') {
-        a += element.valor;
+        a = element.valor;
+        _a.push(a);
       } else if (element.rubro == 'Restaurante') {
-        o += element.valor;
+        r = element.valor;
+        _r.push(r);
       } else if (element.rubro == 'Educación') {
-        o += element.valor;
+        e += element.valor;
       } else if (element.rubro == 'Vestuario') {
-        o += element.valor;
+        v += element.valor;
       } else if (element.rubro == 'Servicios públicos') {
-        o += element.valor;
+        s += element.valor;
       } else if (element.rubro == 'Transporte') {
-        o += element.valor;
+        t += element.valor;
       } else if (element.rubro == 'Vivienda') {
-        o += element.valor;
+        vi += element.valor;
       } else if (element.rubro == 'Salud') {
-        o += element.valor;
+        sa += element.valor;
       } else if (element.rubro == 'Diversión y entretenimiento') {
-        o += element.valor;
+        d += element.valor;
       } else if (element.rubro == 'Operaciones') {
-        o += element.valor;
+        o = element.valor;
+        _o.push(o);
       } else if (element.rubro == 'Créditos') {
-        o += element.valor;
+        c += element.valor;
       }
     }
+    let obj = [
+      {
+        name: 'Alimentación',
+        data: _a,
+      },
+      {
+        name: 'Restaurante',
+        data: _r,
+      },
+      {
+        name: 'Operaciones',
+        data: _o,
+      },
+    ];
+
+    data.forEach((element: any) => {
+      console.log(element.fechaCreacion.slice(5, 7));
+    });
+    console.log(this.obj);
     this.count.push(a);
     this.count.push(r);
     this.count.push(e);
@@ -134,6 +164,119 @@ export class AreaChartComponent implements OnInit {
       },
       chart: {
         type: 'area',
+        options3d: {
+          enabled: true,
+          alpha: 15,
+          beta: 30,
+          depth: 200,
+        },
+      },
+      title: {
+        text: 'Random DATA',
+      },
+      subtitle: {
+        text: 'DEMO',
+      },
+
+      tooltip: {
+        shared: true,
+        headerFormat:
+          '<span style="font-size:12px"><b>{point.key}</b></span><br>',
+      },
+      credits: {
+        enabled: false,
+      },
+      exporting: {
+        enabled: true,
+      },
+      // xAxis: {
+      //   type: 'datetime',
+      // },
+      //plotOptions: {
+      //series: {
+      //pointStart: Date.UTC(2022, 11, 1),
+      //pointIntervalUnit: 'month',
+      //},
+      // },
+      series: this.obj,
+      // series: [
+      //   {
+      //     data: this.count,
+      //   },
+      // ],
+    };
+  }
+
+  obj: any;
+  _obj() {
+    return [
+      {
+        name: 'alimentos',
+        data: [10, 20, 30, 40],
+      },
+      {
+        name: 'restaurante',
+        data: [5, 5, 10, 40],
+      },
+    ];
+  }
+
+  find(data: any) {
+    let _a: any[] = [];
+
+    let rubro = ['Alimentación', 'Restaurante', 'Educación', 'Operaciones'];
+    let mes = ['01', '02', '03'];
+
+    rubro.forEach((item) => {
+      mes.forEach((m) => {
+        const resultado = data.filter(
+          (element: any) =>
+            element.rubro === item && element.fechaCreacion.slice(5, 7) === m
+        );
+        let a: any[] = [];
+        resultado.forEach((element: any) => {
+          a.push(element.valor);
+        });
+        if (a.length > 0) {
+          a = a.reduce((a, b) => a + b);
+          _a.push(a);
+        } else {
+          _a.push(0);
+        }
+        console.log(resultado);
+        console.log(_a);
+      });
+    });
+    this.obj = [
+      {
+        name: 'Alimentación',
+        data: [_a[0], _a[1], _a[2]],
+      },
+      {
+        name: 'Restaurante',
+        data: [_a[3], _a[4], _a[5]],
+      },
+      {
+        name: 'Educación',
+        data: [_a[6], _a[7], _a[8]],
+      },
+      {
+        name: 'Operaciones',
+        data: [_a[9], _a[10], _a[11]],
+      },
+    ];
+    this.chartOptions = {
+      accessibility: {
+        enabled: false,
+      },
+      chart: {
+        type: 'area',
+        options3d: {
+          enabled: true,
+          alpha: 15,
+          beta: 30,
+          depth: 200,
+        },
       },
       title: {
         text: 'Random DATA',
@@ -158,30 +301,16 @@ export class AreaChartComponent implements OnInit {
       },
       plotOptions: {
         series: {
-          pointStart: Date.UTC(2022, 11, 1),
+          pointStart: Date.UTC(2022, 12, 1),
           pointIntervalUnit: 'month',
         },
       },
-      // series: this.obj,
-      series: [
-        {
-          data: this.count,
-        },
-      ],
+      series: this.obj,
+      // series: [
+      //   {
+      //     data: this.count,
+      //   },
+      // ],
     };
-  }
-
-  obj: any;
-  _obj() {
-    return [
-      {
-        name: 'alimentos',
-        data: [10, 20, 30, 40],
-      },
-      {
-        name: 'restaurante',
-        data: [5, 5, 10, 40],
-      },
-    ];
   }
 }
