@@ -4,12 +4,12 @@
       <div class="col mt-0 p-1">
         <mat-card class="text-center stp" style="background-color: #e57373">
           <mat-card-content class="stp-con">
-            <mat-card-subtitle class="text-light">Tienes</mat-card-subtitle>
-            <div class="display-2 text-light">{{ pendiente }}</div>
+            <mat-card-subtitle class="text-light">En total</mat-card-subtitle>
+            <div class="display-3 text-light">{{ totalGastos | number }}</div>
           </mat-card-content>
           <mat-card-content>
             <h3 class="my-1 p-2 fs-2 text-light">
-              Solicitudes de transporte pendientes
+              Gastado
             </h3>
           </mat-card-content>
         </mat-card>
@@ -19,13 +19,13 @@
       </div>
       <!-- card 2 -->
       <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #81c784">
+        <mat-card class="text-center stp" style="background-color: #ffb74d">
           <mat-card-content class="stp-con">
-            <mat-card-subtitle>Se han realizado</mat-card-subtitle>
-            <div class="display-2">{{ realizado }}</div>
+            <mat-card-subtitle>En total</mat-card-subtitle>
+          <div class="display-3">{{ totalGastosMes | number }}</div>
           </mat-card-content>
           <mat-card-content>
-            <h2 class="my-1 fs-2 p-2">Solicitudes de transporte en el mes</h2>
+            <h2 class="my-1 fs-2 p-2">Gastados el último mes</h2>
           </mat-card-content>
         </mat-card>
         <!-- <mat-card class="btn btn-outline-secondary mt-1">
@@ -34,16 +34,16 @@
       </div>
       <!-- cadr 3 -->
       <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #ffb74d">
+        <mat-card class="text-center stp" style="background-color: #81c784">
           <mat-card-content class="stp-con">
-            <mat-card-subtitle>Se recorrieron</mat-card-subtitle>
-            <div class="display-2">{{ totalRecorrido }}&nbsp;Km</div>
+            <mat-card-subtitle>En total</mat-card-subtitle>
+            <div class="display-3">{{ totalIngresos | number }}</div>
           </mat-card-content>
   
-          <mat-card-actions class="stp-act">
-            <h2 class="my-1 fs-2 p-2">En el mes</h2>
+          <mat-card-content class="stp-act">
+            <h2 class="my-1 fs-2 p-2">Ingresos</h2>
             <br />
-          </mat-card-actions>
+          </mat-card-content>
         </mat-card>
         <!-- <mat-card class="btn btn-outline-secondary mt-1">
           <mat-card-content> VER LISTADO </mat-card-content>
@@ -54,11 +54,11 @@
         <mat-card class="text-center stp" style="background-color: #64b5f6">
           <mat-card-content class="stp-con">
             <mat-card-subtitle class="text-light">En total</mat-card-subtitle>
-            <div class="display-2 text-light">5</div>
+            <div class="display-3 text-light">{{ totalIngresosMes | number }}</div>
           </mat-card-content>
   
           <mat-card-content class="stp-act">
-            <h2 class="my-1 fs-2 p-2 text-light">Horas en el mes</h2>
+            <h2 class="my-1 fs-2 p-2 text-light">Ingresos en el mes</h2>
             <br />
           </mat-card-content>
         </mat-card>

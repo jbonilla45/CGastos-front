@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
   <app-navbar (toggleSideBarForMe)="sideBarToggler()"></app-navbar>
   <mat-drawer-container>
     <mat-drawer mode="side" [opened]="sideBarOpen">
-      <app-sidebar></app-sidebar>
+      <app-sidebar  (toggleSideBarForMe)="sideBarToggler()"></app-sidebar>
     </mat-drawer>
     <mat-drawer-content class="p-0">
       <router-outlet></router-outlet>
