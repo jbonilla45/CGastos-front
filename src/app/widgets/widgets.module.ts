@@ -4,18 +4,23 @@ import { CommonModule } from '@angular/common';
 import { AreaChartComponent } from './area-chart/area-chart.component';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CardComponent } from './card/card.component';
+
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
-    AreaChartComponent
+    AreaChartComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
     HighchartsChartModule,
+    MatCardModule
   ],
   exports: [
-    AreaChartComponent
+    AreaChartComponent, CardComponent
   ],
 })
 export class WidgetsModule { }

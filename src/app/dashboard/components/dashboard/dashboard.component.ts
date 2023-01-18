@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('desde dash');
-    this._listGastos = this._gastosService.listGastos();
+    //console.log('desde dash');
+    //this._listGastos = this._gastosService.listGastos();
   }
 }

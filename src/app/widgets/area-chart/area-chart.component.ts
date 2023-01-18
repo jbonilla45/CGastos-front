@@ -243,8 +243,8 @@ export class AreaChartComponent implements OnInit {
         } else {
           _a.push(0);
         }
-        console.log(resultado);
-        console.log(_a);
+        //console.log(resultado);
+        //console.log(_a);
       });
     });
     this.obj = [

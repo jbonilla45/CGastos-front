@@ -1,0 +1,71 @@
+<div class="text-center p-0">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+      <!-- card 1 -->
+      <div class="col mt-0 p-1">
+        <mat-card class="text-center stp" style="background-color: #e57373">
+          <mat-card-content class="stp-con">
+            <mat-card-subtitle class="text-light">Tienes</mat-card-subtitle>
+            <div class="display-2 text-light">{{ pendiente }}</div>
+          </mat-card-content>
+          <mat-card-content>
+            <h3 class="my-1 p-2 fs-2 text-light">
+              Solicitudes de transporte pendientes
+            </h3>
+          </mat-card-content>
+        </mat-card>
+        <!-- <mat-card class="btn btn-outline-secondary mt-1">
+          <mat-card-content routerLink="/list"> VER LISTADO </mat-card-content>
+        </mat-card> -->
+      </div>
+      <!-- card 2 -->
+      <div class="col mt-0 p-1">
+        <mat-card class="text-center stp" style="background-color: #81c784">
+          <mat-card-content class="stp-con">
+            <mat-card-subtitle>Se han realizado</mat-card-subtitle>
+            <div class="display-2">{{ realizado }}</div>
+          </mat-card-content>
+          <mat-card-content>
+            <h2 class="my-1 fs-2 p-2">Solicitudes de transporte en el mes</h2>
+          </mat-card-content>
+        </mat-card>
+        <!-- <mat-card class="btn btn-outline-secondary mt-1">
+          <mat-card-content> VER LISTADO </mat-card-content>
+        </mat-card> -->
+      </div>
+      <!-- cadr 3 -->
+      <div class="col mt-0 p-1">
+        <mat-card class="text-center stp" style="background-color: #ffb74d">
+          <mat-card-content class="stp-con">
+            <mat-card-subtitle>Se recorrieron</mat-card-subtitle>
+            <div class="display-2">{{ totalRecorrido }}&nbsp;Km</div>
+          </mat-card-content>
+  
+          <mat-card-actions class="stp-act">
+            <h2 class="my-1 fs-2 p-2">En el mes</h2>
+            <br />
+          </mat-card-actions>
+        </mat-card>
+        <!-- <mat-card class="btn btn-outline-secondary mt-1">
+          <mat-card-content> VER LISTADO </mat-card-content>
+        </mat-card> -->
+      </div>
+      <!-- card 4 -->
+      <div class="col mt-0 p-1">
+        <mat-card class="text-center stp" style="background-color: #64b5f6">
+          <mat-card-content class="stp-con">
+            <mat-card-subtitle class="text-light">En total</mat-card-subtitle>
+            <div class="display-2 text-light">5</div>
+          </mat-card-content>
+  
+          <mat-card-content class="stp-act">
+            <h2 class="my-1 fs-2 p-2 text-light">Horas en el mes</h2>
+            <br />
+          </mat-card-content>
+        </mat-card>
+        <!-- <mat-card class="btn btn-outline-secondary mt-1">
+          <mat-card-content> VER LISTADO </mat-card-content>
+        </mat-card> -->
+      </div>
+    </div>
+  </div>
+  
