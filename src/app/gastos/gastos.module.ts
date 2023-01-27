@@ -23,6 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [CreateComponent, ListComponent],
@@ -39,6 +40,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSortModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     ToastrModule.forRoot(),
     RouterModule,
   ],

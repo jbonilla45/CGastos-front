@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -24,12 +25,16 @@ export class ListComponent {
     'valor',
     'impuesto',
     'descuento',
+    'acciones',
   ];
 
   //array de datos inicializado
   @Input() listGastos: any = new MatTableDataSource<any>([]);
 
-  constructor(private _gastoService: GastoService) {}
+  constructor(
+    private _gastoService: GastoService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     //console.log('desde list')
@@ -61,6 +66,18 @@ export class ListComponent {
         console.log(this.listGastos.data);
       },
       error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  delete(id: any) {
+    this._gastoService.deleteGasto(id).subscribe({
+      next: () => {
+        this.toastr.error('registro eliminado!');
+        this._listGastos();
+      },
+      error: (error: any) => {
         console.log(error);
       },
     });

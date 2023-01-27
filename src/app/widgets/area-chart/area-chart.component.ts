@@ -223,8 +223,15 @@ export class AreaChartComponent implements OnInit {
 
   find(data: any) {
     let _a: any[] = [];
-
-    let rubro = ['Alimentación', 'Restaurante', 'Educación', 'Operaciones'];
+    let rubro = [
+      'Alimentación',
+      'Restaurante',
+      'Educación',
+      'Operaciones',
+      'Servicios públicos',
+      'Diversión y entretenimiento',
+      'Créditos',
+    ];
     let mes = ['01', '02', '03'];
 
     rubro.forEach((item) => {
@@ -264,6 +271,18 @@ export class AreaChartComponent implements OnInit {
         name: 'Operaciones',
         data: [_a[9], _a[10], _a[11]],
       },
+      {
+        name: 'Servicios públicos',
+        data: [_a[12], _a[13], _a[14]],
+      },
+      {
+        name: 'Diversión y entretenimiento',
+        data: [_a[15], _a[16], _a[17]],
+      },
+      {
+        name: 'Créditos',
+        data: [_a[18], _a[19], _a[20]],
+      },
     ];
     this.chartOptions = {
       accessibility: {
@@ -279,10 +298,10 @@ export class AreaChartComponent implements OnInit {
         },
       },
       title: {
-        text: 'Random DATA',
+        text: 'Gastos DATA',
       },
       subtitle: {
-        text: 'DEMO',
+        // text: 'DEMO',
       },
 
       tooltip: {

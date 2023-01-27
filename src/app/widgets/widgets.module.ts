@@ -7,20 +7,16 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './card/card.component';
 
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [
-    AreaChartComponent,
-    CardComponent
-  ],
+  declarations: [AreaChartComponent, CardComponent],
   imports: [
     CommonModule,
     HighchartsChartModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
   ],
-  exports: [
-    AreaChartComponent, CardComponent
-  ],
+  exports: [AreaChartComponent, CardComponent],
 })
-export class WidgetsModule { }
+export class WidgetsModule {}

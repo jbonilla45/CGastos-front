@@ -27,7 +27,9 @@ export class GastoService {
     return this.http.get(this.url + id);
   }
 
-  deleteGasto() {}
+  deleteGasto(id: string): Observable<any> {
+    return this.http.delete(this.url +'/'+ id);
+  }
   chartOptions: any;
   count: any[] = [];
 }

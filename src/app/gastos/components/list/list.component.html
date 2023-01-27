@@ -19,12 +19,7 @@
     <!-- tabla -->
     <div class="">
       <div class="table-responsive mat-elevation-z8">
-        <table
-          mat-table
-          class=""
-          [dataSource]="listGastos"
-          matSort
-        >
+        <table mat-table class="" [dataSource]="listGastos" matSort>
           <!-- fechaCreacion Column -->
           <ng-container matColumnDef="fechaCreacion">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
@@ -77,6 +72,16 @@
           <ng-container matColumnDef="descuento">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Descuento</th>
             <td mat-cell *matCellDef="let row">{{ row.descuento | number }}</td>
+          </ng-container>
+
+          <!-- acciones Column -->
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-mini-fab color="warn" (click)="delete(row._id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

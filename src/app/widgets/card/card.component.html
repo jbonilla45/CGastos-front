@@ -1,12 +1,13 @@
 <div class="text-center p-0">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
       <!-- card 1 -->
-      <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #e57373">
+      <div class="col mt-0 p-1 ">
+        <mat-card class="text-center stp tarjeta" style="background-color: #e57373 ">
           <mat-card-content class="stp-con">
             <mat-card-subtitle class="text-light">En total</mat-card-subtitle>
             <div class="display-3 text-light">{{ totalGastos | number }}</div>
           </mat-card-content>
+          <!-- <mat-divider></mat-divider> -->
           <mat-card-content>
             <h3 class="my-1 p-2 fs-2 text-light">
               Gastado
@@ -19,7 +20,7 @@
       </div>
       <!-- card 2 -->
       <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #ffb74d">
+        <mat-card class="text-center stp tarjeta" style="background-color: #ffb74d">
           <mat-card-content class="stp-con">
             <mat-card-subtitle>En total</mat-card-subtitle>
           <div class="display-3">{{ totalGastosMes | number }}</div>
@@ -34,7 +35,7 @@
       </div>
       <!-- cadr 3 -->
       <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #81c784">
+        <mat-card class="text-center stp tarjeta" style="background-color: #81c784">
           <mat-card-content class="stp-con">
             <mat-card-subtitle>En total</mat-card-subtitle>
             <div class="display-3">{{ totalIngresos | number }}</div>
@@ -51,7 +52,7 @@
       </div>
       <!-- card 4 -->
       <div class="col mt-0 p-1">
-        <mat-card class="text-center stp" style="background-color: #64b5f6">
+        <mat-card class="text-center stp tarjeta" style="background-color: #64b5f6">
           <mat-card-content class="stp-con">
             <mat-card-subtitle class="text-light">En total</mat-card-subtitle>
             <div class="display-3 text-light">{{ totalIngresosMes | number }}</div>

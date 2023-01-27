@@ -1,3 +1,12 @@
-.mdc-card{
-    height: 250px !important;
+.tarjeta{
+    height: 25vh !important;
 }
+.tarjeta:hover{
+/* background: #e0e0e0ad !important; */
+transform: scale(1.01);
+}
+
+tarjeta:focus {
+    background: yellow;
+    color: red;
+  }
