@@ -48,7 +48,6 @@ export class CreateComponent implements OnInit {
     this._gastoService.createGasto(GASTO).subscribe({
       next: () => {
         this.toastr.success(
-          'El registro se creó con éxito!',
           'Gasto registrado!'
         );
         this.gastoForm.reset();
@@ -58,6 +57,6 @@ export class CreateComponent implements OnInit {
         this.gastoForm.reset();
       },
     });
-    this.router.navigate(['list']);
+    this.router.navigate(['']);
   }
 }

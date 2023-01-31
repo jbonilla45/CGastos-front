@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Gasto } from '../models/gasto';
 
@@ -28,7 +27,7 @@ export class GastoService {
   }
 
   deleteGasto(id: string): Observable<any> {
-    return this.http.delete(this.url +'/'+ id);
+    return this.http.delete(this.url + '/' + id);
   }
   chartOptions: any;
   count: any[] = [];

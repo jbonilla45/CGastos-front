@@ -1,6 +1,6 @@
 export class Gasto {
   _id?: number;
-  fechaCreacion?:Date;
+  fechaCreacion?: Date;
   descripcion: string;
   tipo: string;
   rubro: string;

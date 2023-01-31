@@ -1,5 +1,6 @@
+import { CreateIngresoComponent } from './ingresos/components/create-ingreso/create-ingreso.component'
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './gastos/components/create/create.component';
 import { ListComponent } from './gastos/components/list/list.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'list',
         component: ListComponent
+      },
+      {
+        path:'createIngreso',
+        component: CreateIngresoComponent
       }
     ],
   },
