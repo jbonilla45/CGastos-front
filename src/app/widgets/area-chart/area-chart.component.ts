@@ -40,6 +40,7 @@ export class AreaChartComponent implements OnInit {
       this.find(ingresosData, 'Ingresos');
       this._chartOptions();
     });
+    console.log(this.dataChart);
   }
 
   find(data: any, _name: string) {
