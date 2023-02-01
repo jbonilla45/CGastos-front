@@ -17,6 +17,9 @@ export class IngresoService {
     return this.http.post(this.url, ingreso);
   }
   //read
+  listIngresos(): Observable<any>{
+    return this.http.get(this.url)
+  }
   //update
   //delete
 }

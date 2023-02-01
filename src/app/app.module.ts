@@ -1,3 +1,4 @@
+import { IngresosModule } from './ingresos/ingresos.module';
 import { WidgetsModule } from './widgets/widgets.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { GastosModule } from './gastos/gastos.module';
@@ -20,7 +21,8 @@ import { HomeModule } from './home/home.module';
     GastosModule,
     HomeModule,
     DashboardModule,
-    WidgetsModule
+    WidgetsModule,
+    IngresosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

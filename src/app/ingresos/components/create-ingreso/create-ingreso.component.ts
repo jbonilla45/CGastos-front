@@ -43,5 +43,6 @@ export class CreateIngresoComponent {
         this.ingresoForm.reset();
       },
     });
+    this.router.navigate(['']);
   }
 }
